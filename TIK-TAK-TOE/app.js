@@ -51,7 +51,7 @@ const chackwin = () => {
     if (a != "" && b != "" && c != "") {
       if (a === b && b === c) {
         if (a === 'x') {
-          winMsg.innerText = "you win red";
+          winMsg.innerText = "you win Red";
           winMsg.style.color = 'red';
           
         } else {
