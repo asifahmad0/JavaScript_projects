@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="contener">
+        <h1>search Box</h1>
+        <input type="text" oninput="search()" id="search" placeholder="search here">
+        <ul id="list">
+            <li>laptop screen</li>
+            <li>mobile screen</li>
+            <li>book cover</li>
+            <li>pen</li>
+        </ul>
+    </div>
+
+    <script>
+        function search(){
+        let input =document.getElementById('search').value.toLowerCase();
+        let list = document.getElementById('list');
+        let items = document.getElementsByTagName('li');
+
+        
+            for(i=0; i<items.length; i++){
+                const item = items[i];
+                const text = item.textContent.toLowerCase();
+                if (text.includes(input)){
+                    item.style.display='block';
+                }else{
+                    item.style.display='none';
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
