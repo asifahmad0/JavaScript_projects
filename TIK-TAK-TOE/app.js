@@ -53,10 +53,12 @@ const chackwin = () => {
         if (a === 'x') {
           winMsg.innerText = "you win Red";
           winMsg.style.color = 'red';
+          deseb();
           
         } else {
           winMsg.innerText = "you win Blue";
           winMsg.style.color = 'Blue';
+          deseb();
           
         }
 
@@ -64,3 +66,25 @@ const chackwin = () => {
     }
   }
 };
+
+function deseb() {
+
+  for (parent of winPattern) {
+    
+
+    let pos1 = box[parent[0]].innerHTML;
+    let pos2 = box[parent[1]].innerHTML;
+    let pos3 = box[parent[2]].innerHTML;
+    let d1 = box[parent[0]];
+    let d2 = box[parent[1]];
+    let d3 = box[parent[2]];
+    console.log(pos1,pos2,pos3)
+    if (pos1 === "" || pos2 === "" || pos3 === "") {
+      console.log('working');
+      d1.disabled = true;
+      d2.disabled = true;
+      d3.disabled = true;
+    }
+
+  }
+}
