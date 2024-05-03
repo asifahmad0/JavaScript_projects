@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product search</title>
+    <style>
+      *::before,
+      *,
+      *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      main {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background: red;
+      }
+      .search {
+        width: 400px;
+        height: 50px;
+        display: flex;
+        gap: 2px;
+        padding: 5px;
+      }
+      .search input {
+        width: 80vmin;
+        height: 30px;
+        border: none;
+        outline: none;
+        padding: 0 20px;
+        background: transparent;
+        font-size: 18px;
+        border-bottom: 2px solid rgb(22, 177, 56);
+      }
+      #searchBtn {
+        width: 17vmin;
+        height: 30px;
+        background: rgb(22, 177, 56);
+        border: none;
+        outline: none;
+      }
+      .list {
+        width: 80vmin;
+        height: 73vmin;
+        padding: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        gap: 5px;
+      }
+      .list li {
+        width: 25vmin;
+        height: 35vmin;
+        list-style: none;
+        background-color: rgb(32, 224, 58);
+        text-align: center;
+        place-content: center;
+        color: white;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="search">
+        <input
+          id="searchInp"oninput="search()" type="text" placeholder="search here"/>
+        <button id="searchBtn">search</button>
+      </div>
+      <ul class="list">
+        <li>Shirt</li>
+        <li>Tshirt</li>
+        <li>shose</li>
+        <li>watch</li>
+        <li>Tshirt</li>
+        <li>shose</li>
+        <li>jeens</li>
+        <li>jacket</li>
+        <li>sun glass</li>
+        <li>tops</li>
+      </ul>
+    </main>
+
+    <script>
+
+
+    let searchBtn = document.getElementById("searchBtn");
+     
+    searchBtn.addEventListener('click', function search() {
+
+
+        let searchInp = document.getElementById("searchInp").value.toLowerCase();
+        let items = document.getElementsByTagName("li");
+
+        for (i = 0; i < items.length; i++) {
+          let item = items[i];
+          let text = item.textContent.toLowerCase();
+
+          if (text.includes(searchInp)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
