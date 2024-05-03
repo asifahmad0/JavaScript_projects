@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>full Screen</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        main{
+            width: 100%;
+            height: 100vh;
+            background: red;
+            display: grid;
+            place-items: center;
+        }
+        .box{
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .box #fullScreen{
+            position: absolute;
+            border: 2px solid black;
+            width: 50px;
+            height: 20px;
+            right: 5px;
+            bottom: 5px;
+            cursor: pointer;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="box">
+            <button id="fullScreen"></button>
+        </div>
+    </main>
+
+    <script>
+        let btn = document.querySelector('#fullScreen');
+        let box = document.querySelector('.box');
+
+        btn.addEventListener('click', ()=>{
+            if(box.requestFullscreen){
+                box.requestFullscreen();
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
