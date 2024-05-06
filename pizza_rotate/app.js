@@ -32,3 +32,4 @@ function preSlider(){
 }
 next.onclick= nextSlider;
 pre.onclick= preSlider;
+let autoNext = setInterval(nextSlider, 3000);
