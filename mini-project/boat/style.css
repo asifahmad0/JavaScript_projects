@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#video1{
+position: absolute;
+left: 0;
+top: 0;
+transform: 1s;
+}
+#video2{
+    position: absolute;
+    right: -385px;
+    top: 0;
+    transition: 1s;
+    opacity: 0;
+transform: all 1s ease-in-out;
+}
+#lightOn{
+    position: absolute;
+    cursor: pointer;
+    top: 90%;
+    left: 50%;
+    padding: 10px 30px;
+    font-weight: 500;
+    background: orange;
+    border: none;
+    border-radius: 20px;
+    z-index: 1000;
+}
+#lightOn:hover{
+    box-shadow: 0 0 25px orange, 0 0 50px orange, 0 0 75px orange, 0 0 100px orange, 0 0 200px orange;
+}
+.contaner{
+    position: relative;
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    background:transparent;
+    position: absolute;
+    z-index: 1000;
+    top: 60%;
+    left: 45%;
+    transform: translate(-50% 0%);
+    overflow: hidden;
+
+}
+#dragme{
+    position: relative;
+    width: 5vw;
+    height: 5vw;
+    background: transparent;
+    /*border: 3px solid;
+    border-color: orange white white white;*/
+    border-radius: 50%;
+    z-index: 100;
+    overflow: hidden;
+    
+}
+.drag-c{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    background: transparent;
+    top: 0;
+    left: 0;
+    border: 3px dashed;
+    border-color: orange white white white;
+    border-radius: 50%;
+    z-index: 100;
+    animation: circ 1s linear infinite;
+}
+
+@keyframes circ{
+    0%{
+        rotate:-360deg;
+    }100%{
+        rotate:0deg;
+    }
+}
+.cir-p{position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    right: 0;
+
+}
+.cir{
+    width: 10px;
+    height: 10px;
+    background-color:orange;
+    border-radius: 50%;
+}
