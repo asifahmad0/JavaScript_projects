@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <section>
+      <nav>
+        <div class="pro-box">
+          <div id="proLine"></div>
+        </div>
+      </nav>
+
+      <input list="coder">
+      <datalist id="coder">
+        <option value="HTML"></option>
+        <option value="JS"></option>
+        <option value="React"></option>
+        <option value="Node"></option>
+      </datalist>
+    </section>
+    <div class="contener">
+        <div class="content">
+            <i class="fa-brands fa-youtube fa-5x"></i>
+            <div class="count" data-target="10000">10000</div>
+            <h2>YouTub</h2>
+        </div>
+        <div class="content">
+            <i class="fa-brands fa-instagram fa-5x"></i>
+            <div class="count" data-target="6000">6000</div>
+            <h2>Instagram</h2>
+        </div>
+        <div class="content">
+            <i class="fa-brands fa-twitter fa-5x"></i>
+            <div class="count" data-target="5000">5000</div>
+            <h2>Twitter</h2>
+        </div>
+
+    </div>
+    <div class="chatContener">
+      <div class="chatId">
+        <div class="img"><img src=""></div>
+        <div class="idContant">
+          <h1>Asif Ahmad</h1>
+          <span id="status">Typing</span>
+        </div>
+      </div>
+      <div class="chatBox">
+        <h2 id="sendMsg">Hi, My Name is Asif Ahmad</h2>
+        <h2 id="recievedMsg">Hi, My Name is Asif Ahmad</h2>
+      </div>
+      <div class="msgWrite">
+        <input id="Typing" type="text" placeholder="Type Here..">
+        <button id="send">Send</button>
+      </div>
+    </div>
+    <div class="d">3</div>
+
+    <script src="script.js"></script>
+    <script>
+      let Typing= document.querySelector('#Typing');
+      let status= document.querySelector('#status');
+      let typingTimer;
+
+
+      const hide=()=>{status.style.display='none';}
+
+      Typing.addEventListener('keydown',(e)=>{
+        clearTimeout(typingTimer);
+       status.style.display='block';
+       typingTimer = setTimeout(hide,10);
+      })
+
+      
+     
+      
+       
+      
+
+    </script>
+  </body>
+</html>
