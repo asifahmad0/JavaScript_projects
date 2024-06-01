@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sine Pade</title>
+    <style>
+        main{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        h1{
+            font-size: 3rem;
+            font-family: cursive;
+        }
+        canvas{
+            width: 500px;
+            height: 300px;
+            border: 2px solid black;
+            border-radius: 50px;
+        }
+        #clear{
+            padding: 10px 20px;
+            background-color: green;
+            color: aliceblue;
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Signature Pade</h1>
+        <canvas id="sinArea"></canvas>
+        <button id="clear">clear</button>
+    </main>
+
+
+    <script>
+        
+
+        document.addEventListener('DOMContentLoaded', function(){
+
+            const canvas = document.querySelector('#sinArea');
+            const clear = document.querySelector('#clear');
+            const ctx = canvas.getContext('2d');
+            let isDrowing=false;
+            canvas.width=500;
+            canvas.height=300;
+            canvas.addEventListener('mouseup', drowingStart);
+            canvas.addEventListener('mousedown', drowingStope);
+            
+            clear.addEventListener('click', clearCanvas);
+
+
+            function drowingStart(e){
+                isDrowing=true;
+                ctx.beginPath();
+                ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+
+                
+                canvas.addEventListener('mousemove', drow);
+                function drow (e){
+                if (isDrowing)
+                    return;
+                    ctx.lineWidth =2;
+                    ctx.lineCap = 'round';
+                    ctx.strokeStyle='#000';
+                    ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+                    ctx.stroke();
+                
+            }
+
+            }
+            function drowingStope(){
+                isDrowing=false;
+                ctx.closePath();
+            }
+           
+            
+            function clearCanvas(){
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+
+        })
+    </script>
+    
+</body>
+</html>
