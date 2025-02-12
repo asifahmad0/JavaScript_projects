@@ -11,7 +11,7 @@ let rotateAdd = 360/count;
 
 function show(){
     images.style.setProperty('--rotate', rotate+'deg');
-    contant.forEach((contant,key)=>{
+    contant.forEach((contant,key)=>{ 
         if(key===active){
             contant.classList.add('active');
         }else{
