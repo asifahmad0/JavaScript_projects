@@ -1,6 +1,6 @@
 let pre = document.getElementById('pre');  
 let next = document.getElementById('next');  
-let images = document.querySelector('.images');
+let images = document.querySelector('.images');  
 let items = document.querySelectorAll('.images .item'); 
 let contant =document.querySelectorAll('.contant .item');
 
