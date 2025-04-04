@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asif Ahmad</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+        @theme {
+          --color-clifford: #da373d;
+        }
+        .card-side{
+            backface-visibility: hidden;
+            transition: 0.5s ease-in-out;
+        }
+        .card:hover .back{
+            transform: rotateY(0deg);
+            opacity: 1;
+        }
+        .card:hover .front{
+            transform: rotateY(180deg);
+            
+        }
+
+    </style>
+</head>
+<body class="bg-green-100">
+        <div class="container w-[100vw] h-[100vh] flex justify-center items-center">
+            <div class=" card relative w-[250px] h-[350px] overflow-hidden ">
+
+                <div class="front card-side absolute w-[100%] h-[100%] flex flex-col bg-red-900 z-1">
+                    <div class="img w-[100%] h-[70%] p-2">
+                        <img class="w-[100%] h-[100%] " src="asif.jpeg" alt="">
+                    </div>
+                    <div class="name w-[100%] h-[30%] flex flex-col text-white p-4 bg-red-900">
+                        <h1 class="font-bold">Asif Ahmad</h1>
+                        <p> I am a Full Stack Softwere Devloper</p>
+                    </div>
+                </div>
+                <div class="back card-side opacity-0 rotate-y-180 absolute w-[100%]
+                 h-[100%] flex flex-col bg-yellow-100 ">
+                    <div class=" pt-4 flex flex-col justify-center text-center">
+                        <h2 class="text-xl font-bold text-red-900">About Us</h2>
+                        <ul class="pl-6 text-left ">
+                            <li>DOB: 15-jun-2002</li>
+                            <li>Education: MCA</li>
+                            <li>Add:Pakur, Jharkhand, India</li>
+                            <li>Contary: India</li>
+                        </ul>
+                    </div>
+                    <div class="skils pl-6 pt-2 text-center ">
+                        <h2 class="text-xl pr-8 font-bold text-red-900">Skils</h2>
+                        <ul class="text-left">
+                            <li>HTML & CSS</li>
+                            <li>Python + Django</li>
+                            <li>JavaScript + React</li>
+                            <li>SQL/MySQL/MongoDB</li>
+                        </ul>
+                    </div>
+                    <div class="contact mt-8 w-[100%] text-center ">
+                        <a href="tel:+917761917649" class=" text-white px-8 py-3 bg-red-900 rounded-xl cursor-pointer ">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>
